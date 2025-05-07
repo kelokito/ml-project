@@ -8,6 +8,7 @@ TEST --> 495 X 21 sentences
 Binary classification
 --> Centrality scores 
 	Good candidates (degree, closeness, betweenness, and PageRank centrality)
+	include a variety of linear and non-linear methods seen during the course
 
 Use python library networkx
 import networkx as nx
