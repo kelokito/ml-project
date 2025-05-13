@@ -1,35 +1,6 @@
-Objective --> Detect the root node in a free tree
-Data
---> 21 languages with 995 sentences
+TRAIN --> K-folds
 
-TRAIN --> 500 X 21 sentences (We should perform k-folds??)
-TEST --> 495 X 21 sentences 
+Graph neural network
 
-Binary classification
---> Centrality scores 
-	Good candidates (degree, closeness, betweenness, and PageRank centrality)
-	include a variety of linear and non-linear methods seen during the course
+NOrmalitzar totes les métriques
 
-Use python library networkx
-import networkx as nx
-def centralities(edgelist):
-"""
-- edgelist is a list of node pairs e.g. [(7,2),(1,7),(1,9),...]
-- returns a dictionary of vertex -> (centrality values)
-"""
-T = nx.from_edgelist(edgelist)
-dc = nx.degree_centrality(T)
-cc = nx.harmonic_centrality(T)
-bc = nx.betweenness_centrality(T)
-pc = nx.pagerank(T)
-return {v: (dc[v], cc[v], bc[v], pc[v]) for v in T}
-
-
-Dataset Preparation
-for each sentence in the train.csv provided:
-	– build tree T from edgelist for sentence
-	– compute centralities of vertices in T
-	– for each vertex v in tree T:
-		* generate features from centralities
-		* set target = 1 if vertex is the root, otherwise it is 0
-		* add row (features, target) to binary classification training dataset
