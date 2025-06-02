@@ -30,3 +30,7 @@ All other datasets (train/test splits, evaluation results, etc.) are generated d
 * Model outputs and performance summaries are stored under the `models/` directory.
 * This approach ensures repeatable, efficient offline testing without requiring daily submissions.
 
+
+## Project Report
+
+The complete report detailing the methodology, experiments, results, and conclusions is provided in the root directory of the project as **`ml_report.pdf`**.
