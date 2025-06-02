@@ -37,14 +37,14 @@ df['leaked_root'] = df.apply(detect_leakage, axis=1)
 # Summary of leakage
 leaked_count = df['leaked_root'].notnull().sum()
 total = len(df)
-print(f"\n⚠️  Leakage Detected in {leaked_count}/{total} samples ({(leaked_count/total)*100:.2f}%)")
+print(f"\n  Leakage Detected in {leaked_count}/{total} samples ({(leaked_count/total)*100:.2f}%)")
 
 # Show a few examples of leaked roots
-print("\n🧪 Example of Leaked Roots:")
+print("\n Example of Leaked Roots:")
 print(df[['id','leaked_root']].dropna().head())
 
 # Optional: Save flagged data
 output_path = './data/tests/results.csv'
 df = df[['id', 'leaked_root']]
 df.to_csv(output_path, index=False)
-print(f"\n✅ Results saved to: {output_path}")
+print(f"\n Results saved to: {output_path}")
